@@ -1,0 +1,11 @@
+# progress bars in model download and training scripts
+tqdm == 4.62.3
+# Accessing files from S3 directly.
+boto3 == 1.18.38
+# Used for downloading models over HTTP
+# requests == 2.26.0
+six == 1.16.0
+#Data processing
+h5py == 2.10.0
+tensorboard == 1.15.0
+numpy == 1.17.5

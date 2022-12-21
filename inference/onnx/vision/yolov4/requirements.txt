@@ -1,0 +1,6 @@
+tqdm
+numpy>=1.18.5
+opencv-python>=4.1.2
+Pillow>=7.1.2
+opencv-python
+pycocotools>=2.0  # COCO mAP
