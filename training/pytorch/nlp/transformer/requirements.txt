@@ -1,0 +1,6 @@
+cffi==1.14.2
+tqdm==4.31.1
+sacrebleu==1.5.1
+sentencepiece==0.1.94
+tensorboardX==2.2
+six==1.16.0
