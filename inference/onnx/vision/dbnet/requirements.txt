@@ -1,0 +1,6 @@
+six
+numpy
+shapely
+pyclipper
+opencv-python
+pillow

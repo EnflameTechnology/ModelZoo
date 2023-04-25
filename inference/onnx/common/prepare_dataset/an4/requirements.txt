@@ -1,0 +1,5 @@
+wget==3.2
+glob2==0.7
+json5==0.9.6
+absl-py==0.7.0
+librosa==0.8.1
