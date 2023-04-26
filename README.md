@@ -1,6 +1,5 @@
-Enflame ModelZoo
+Enflame ModelZoo介绍
 
-介绍
 Enflame ModelZoo是由燧原开发和维护的模型合集，提供人工智能各个应用领域(包括并不限于CV/NLP/推荐等)中经典和SOTA模型的训练和推理应用示例。
 
 本仓库旨在基于燧原的硬件产品和软件SDK，展示最佳的编程实践，以达成模型的快速移植和最优性能，开发者可以从ModelZoo的源码中得到研究和二次开发的参考。

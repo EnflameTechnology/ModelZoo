@@ -1,68 +1,89 @@
-# <span id="bert-for-pytorch">**BERT模型**</span>
+# BERT For PyTorch
 
-本代码仓库参考了[repo](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/LanguageModeling/BERT)的实现， 在燧原科技第二代训练卡GCU上完成测试。
+This repository provides comprehensive Bert-large model introduction and script recipe to train model for state-of-the-art performance, tested and maintained by Enflame.
 
 
-## <span id="table-of-contents">**目录**</span>
-- [BERT](#bert-for-pytorch)
-  - [**目录**](#table-of-contents)
-  - [**模型介绍**](#model-introduction)
-    - [**模型结构**](#model-architecture)
-    - [**模型规模**](#default-configuration)
-  - [**环境配置**](#environment-setup)
-  - [**快速开始**](#start-guide)
-    - [**准备训练数据集**](#prepare-dataset)
-    - [**准备预训练模型文件**](#prepare-init-checkpoint)
-    - [**数据集合**](#collect-all-data)
-    - [**开始训练**](#start-fine-tuning-with-the-squad-dataset)
-      - [**举例**](#run-bash-examlple)
-  - [**结果**](#performance)
-    - [**测试命令**](#training-performance-benchmark)
-    - [**GCU测试结果**](#gcu-results)
-      - [**训练精度**](#training-accuracy-results)
-      - [**训练性能**](#training-performance-results)
+## **Table of Contents**
 
-## <span id="model-introduction">**模型介绍**</span>
+- [BERT For PyTorch](#bert-for-pytorch)
+  - [**Table of Contents**](#table-of-contents)
+  - [**Model Introduction**](#model-introduction)
+    - [**Model Architecture**](#model-architecture)
+    - [Default configuration](#default-configuration)
+    - [**Configuration**](#configuration)
+  - [**Environment Setup**](#environment-setup)
+    - [**Environment Setup On GCU**](#environment-setup-on-gcu)
+  - [**Start Guide**](#start-guide)
+    - [**Prepare Dataset**](#prepare-dataset)
+    - [**Prepare init checkpoint**](#prepare-init-checkpoint)
+    - [**Collect all data**](#collect-all-data)
+    - [**Start fine-tuning with the SQuAD dataset**](#start-fine-tuning-with-the-squad-dataset)
+      - [**Run bash Examlple**](#run-bash-examlple)
+  - [**Performance**](#performance)
+    - [**Benchmarking**](#benchmarking)
+      - [**Training Performance Benchmark**](#training-performance-benchmark)
+    - [**GCU Results**](#gcu-results)
+      - [**Training Accuracy Results**](#training-accuracy-results)
+      - [**Training Performance Results**](#training-performance-results)
 
-本模型基于论文 [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805) 实现.
+## <span id="model-introduction">**Model Introduction**</span>
 
-### <span id="model-architecture">**模型结构**</span>
+This model is based on the [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805) paper. The full name of Bert is Bidirectional Encoder Representation from Transformers, which is a pre-trained language representation model. It emphasizes that instead of using the traditional one-way language model or shallow splicing of two one-way language models for pre training, it adopts a new masked language model (MLM), so as to generate deep two-way language representation.
 
-BERT模型的主体部分由Transformer的解码器(encoder)部分堆叠而成。把词或半词(token)信息、位置信息（token在输入文本中的位置）通过嵌入表(Embedding)映射到隐空间，再输入到堆叠的解码器中，最后接入任务相关的层。Transformer解码器主要包含了多头双向自注意力机制，还包含线性层MLP以及层正则化(layer normalization)等结构。BERT的预训练任务包括完型填空和预测是否下一句两个任务，这两个任务都是自监督任务，无需标注数据。预训练好的模型可以作为微调任务的初始权重，在很多自然语言处理任务中BERT都取得了当时的最佳。
+### <span id="model-architecture">**Model Architecture**</span>
 
-### <span id="default-configuration">**模型规模**</span>
-[BERT](https://arxiv.org/abs/1810.04805)一文中提及了两种不同规模的BERT模型，模型的参数如下.
+The BERT model uses the same architecture as the encoder of the Transformer. Input sequences are projected into an embedding space before being fed into the encoder structure. Additionally, positional and segment encodings are added to the embeddings to preserve positional information. The encoder structure is simply a stack of Transformer blocks, which consist of a multi-head attention layer followed by successive stages of feed-forward networks and layer normalization. The multi-head attention layer accomplishes self-attention on multiple input representations.
+
+### Default configuration
+
+The architecture of the BERT model is almost identical to the Transformer model that was first introduced in the [Attention Is All You Need paper](https://arxiv.org/pdf/1706.03762.pdf). The main innovation of BERT lies in the pre-training step, where the model is trained on two unsupervised prediction tasks using a large text corpus. Training on these unsupervised tasks produces a generic language model, which can then be quickly fine-tuned to achieve state-of-the-art performance on language processing tasks such as question answering.
+
+The BERT paper reports the results for two configurations of BERT, each corresponding to a unique model size. This implementation provides the same configurations by default, which are described in the table below.
+
 | **Model** | **Hidden layers** | **Hidden unit size** | **Attention heads** | **Feedforward filter size** | **Max sequence length** | **Parameters** |
 |:---------:|:----------:|:----:|:---:|:--------:|:---:|:----:|
-|bert-base |12 encoder| 768| 12|4 x  768|512|110M|
-|bert-large|24 encoder|1024| 16|4 x 1024|512|330M|
+|BERTBASE |12 encoder| 768| 12|4 x  768|512|110M|
+|BERTLARGE|24 encoder|1024| 16|4 x 1024|512|330M|
 
-## <span id="environment-setup">**环境配置**</span>
+### <span id="configuration">**Configuration**</span>
 
-安装配置好GCU驱动和SDK后，本repo模型的其它依赖pip安装即可，如下所示：
+The default configuration for [Optimizer](#optimizer), [Pre-Processing](#pre-processing) and [Post-Processing](#post-processing) will be highlighted in this section.
 
-    ```bash
-    pip install -r requirements.txt
-    ```
-## <span id="start-guide">**快速开始**</span>
 
-这部分主要内容为如何微调BERT模型，任务为问答任务，数据集为斯坦福数据集squad.
+## <span id="environment-setup">**Environment Setup**</span>
 
-### <span id="prepare-dataset">**准备训练数据集**</span>
+This section lists the environmental requirements for GCU and GPU enabling the bert model respectively.
 
-squad数据下载地址如下:
+### <span id="environment-setup-on-GCU">**Environment Setup On GCU**</span>
+
+1. Basic setup to enable bert model.
+
+   - Some dependencies are alse required listed in requirements.txt.
+
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+
+## <span id="start-guide">**Start Guide**</span>
+
+This section will cover more detail how to enabel models in GCU and GPU from scratch respectively, that including but not limited clone source code, prepare dataset, build environment, start training and inference. "dtu" and "_dtu" in the source code refer to gcu.
+
+
+### <span id="prepare-dataset">**Prepare Dataset**</span>
+
+This repository provides scripts to download, verify, and extract the following datasets:
 
 -   [SQuAD 1.1](<https://data.deepai.org/squad1.1.zip>)
 
-下载并用命令unzip解压, 解压文件复制到$DATA_PATH/squad目录（move *.json $DATA_PATH/squad）。因为链接中不包含文件 evaluate-v1.1.py, 需要把本repo的文件squad_evaluate-v1.1.py也复制到$DATA_PATH/squad（cp -r ./squad_evaluate-v1.1.py $DATA_PATH/squad）。
+Download and unzip, move *.json  to $DATA_PATH/squad. For the link do not include evaluate-v1.1.py, we should copy and  squad_evaluate-v1.1.py in this repo to $DATA_PATH/squad
 
-### <span id="Prepare init checkpoint">**准备预训练模型文件**</span>
+### **Prepare init checkpoint**
+If you want to use a pre-trained checkpoint, visit [here](https://topsmodel-1257133546.cos.ap-shanghai.myqcloud.com/topsmodel-1257133546/topsegc/local/model/bert/DLE_BERT_FP16_PyT_LAMB_92_hard_scaling_node.pt?q-sign-algorithm=sha1&q-ak=AKIDYyBAwXzDD1e4GEzZUBgy2iDU5TeaIVUG&q-sign-time=1671098413;2535098413&q-key-time=1671098413;2535098413&q-header-list=&q-url-param-list=&q-signature=3a2e2da40d4b9aff631d8fc9efa0cc1c949d712f). This downloaded checkpoint is used to fine-tune on SQuAD. Ensure you unzip the downloaded file and place the checkpoint in the `checkpoints/` folder. Save DLE_BERT_FP16_PyT_LAMB_92_hard_scaling_node.pt to $DATA_PATH/checkpoint.
 
-这是模型下载[地址](https://topsmodel-1257133546.cos.ap-shanghai.myqcloud.com/topsmodel-1257133546/topsegc/local/model/bert/DLE_BERT_FP16_PyT_LAMB_92_hard_scaling_node.pt?q-sign-algorithm=sha1&q-ak=AKIDYyBAwXzDD1e4GEzZUBgy2iDU5TeaIVUG&q-sign-time=1671098413;2535098413&q-key-time=1671098413;2535098413&q-header-list=&q-url-param-list=&q-signature=3a2e2da40d4b9aff631d8fc9efa0cc1c949d712f). 模型文件DLE_BERT_FP16_PyT_LAMB_92_hard_scaling_node.pt 下载完成之后放到 $DATA_PATH/checkpoint 目录下。
 
-### <span id="Collect all data">**数据集合**</span>
-
-在上述的数据目录$DATA_PATH中内容如下：
+### **Collect all data**
+Collect all data to dataset path($DATA_PATH) as above, dataset directory contain filles like:
 
 ```data
 .
@@ -75,66 +96,79 @@ squad数据下载地址如下:
 ```
 
 
-#### <span id="run-bash-examlple">**举例**</span>
-- 在GCU中跑训练squad任务运行脚本:
+### <span id="start-training">**Start fine-tuning with the SQuAD dataset**</span>
+
+#### **Run bash Examlple**
+
+- This fine-tuning for question answering with the SQuAD task, run command:
 
   ```bash
   bash scripts/run_squad_1gcu.sh
   ```
-- 注意事项:
+- Note:
   ```note
-  1. 在run_squad_1gcu.sh中DATA_PATH变量替换为自己的路径（如上面所示包含checkpoint和squad）。
-  2. export ENFLAME_ENABLE_TF32=true 表示数据类型为TF32, 设置false时数据类型为FP32。
-  3. 如果想使用混精增加参数--amp即可，其它更多参数设置参考run_squad.py。
+  1. change DATA_PATH to your own path include checkpoint and squad as above.
+  2. export ENFLAME_ENABLE_TF32=true means use TF32 dtype, and use FP32 dtype if set false.
+  3. if want to use mix precision(fp16 and TF32 or FP32), add para --amp in *.sh
   ```
 
-## <span id="performance">**结果**</span>
+## <span id="performance">**Performance**</span>
 
+### <span id="benchmarking">**Benchmarking**</span>
 
-## <span id="training-performance-benchmark">**测试命令**</span>
+#### <span id="training-performance-benchmark">**Training Performance Benchmark**</span>
 
-测试脚本如下：
+To benchmark the training performance benchmark on a spcific batch size, run command:
 
-- 对于单卡GCU测试脚本.
+- For 1 [GCU] and [TF32].
 
   ```bash
   bash scripts/run_squad_1gcu.sh
   ```
 
-- 对于8卡GCU测试脚本.
+- For multiple [GCU] and [TF32].
 
   ```bash
   bash scripts/run_squad_8gcu.sh
   ```
-数据类型为FP32，不开混精。
-## <span id="GCU-results">**GCU测试结果**</span>
 
-### <span id="training-accuracy-results">**训练精度**</span>
+### <span id="GCU-results">**GCU Results**</span>
 
-- 单卡GCU-T20精度测试结果.
+#### <span id="training-accuracy-results">**Training Accuracy Results**</span>
 
-| **Epochs** | **Batch Size** | **Accuracy** |
+- Training on 1 GCU T20 under different dtype with fixed batchsize.
+
+  Our results were obtrained by running the [Training Performance Benchmark](#training-performance-benchmark) on Enflame 1xGCU T20.
+
+| **Epochs** | **Batch Size** | **Accuracy - TF32** |
 | ---------- | -------------- | ------------------- |
 | 2          | 8             | 91.2                |
 
-- 8卡GCU-T20精度测试结果.
+- Training accuracy(top1) multiple GCU T20 under different dtype with fixed batchsize.
 
-| **Epochs** | **Batch Size/GCU** | **Accuracy** |
+  Our results were obtrained by running the [Training Performance Benchmark](#training-performance-benchmark) on Enflame 8xGCU T20.
+
+| **Epochs** | **Batch Size/GCU** | **Accuracy - TF32** |
 | ---------- | ------------------ | ------------------- |
 | 2          | 8                  | 91.0               |
 
 
-### <span id="training-performance-results">**训练性能**</span>
 
-- 单卡GCU-T20性能测试结果.
+#### <span id="training-performance-results">**Training Performance Results**</span>
 
-| **Batch Size/GCU** |**Throughput（sentence/s）** |
+- Training performance(Throughput) for 1 GCU T20 under different dtype with various batch size.
+
+  Our results were obtrained by running the [Training Performance Benchmark](#training-performance-benchmark) on Enfalme 1xGCU T20. Performance(images per second) were average over an entire training epoch.
+
+| **Batch Size/GCU** |**Throughput - TF32** |
 | -------------- | --------------------- |
 | 8             |12.6                     |
 
 
-- 8卡GCU-T20性能测试结果.
+- Training performance(Throughput) for multiple GCU T20 under different dtype with various batch size.
 
-| **Batch Size/GCU** |  **Throughput（sentence/s）** |
+  Our results were obtrained by running the [Training Performance Benchmark](#training-performance-benchmark) on Enflame 8xGCU T20. Performance(images per second) were average over an entire training epoch.
+
+| **Batch Size/GCU** |  **Throughput - TF32** |
 | ------------------ |  --------------------- |
 | 8                 |  78.1               |
