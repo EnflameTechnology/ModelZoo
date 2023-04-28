@@ -4,7 +4,7 @@
 #
 RESULTS_DIR='/results'
 CHECKPOINTS_DIR='/results/checkpoints'
-STAT_FILE=${RESULTS_DIR}/DGX1_fp32_static_dtu.json
+STAT_FILE=${RESULTS_DIR}/DGX1_fp32_static_gcu.json
 mkdir -p $CHECKPOINTS_DIR
 
 PREC=${1:-'fp32'}

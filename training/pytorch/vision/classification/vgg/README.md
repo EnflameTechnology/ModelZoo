@@ -12,15 +12,12 @@
   - [**环境配置**](#environment-setup)
   - [**快速开始**](#start-guide)
     - [**准备训练数据集**](#prepare-dataset)
-    - [**准备预训练模型文件**](#prepare-init-checkpoint)
-    - [**数据集合**](#collect-all-data)
     - [**开始训练**](#start-pretraining-with-the-imagnet-dataset)
       - [**举例**](#run-bash-examlple)
   - [**结果**](#performance)
     - [**测试命令**](#training-performance-benchmark)
     - [**GCU测试结果**](#gcu-results)
       - [**训练精度**](#training-accuracy-results)
-      - [**训练性能**](#training-performance-results)
 
 ## <span id="model-introduction">**模型介绍**</span>
 
@@ -49,24 +46,40 @@ VGG是具有多层的标准深度卷积神经网络架构。“深”是指由16
 ImageNet千分类数据下载地址如下:
 
 -   [ImageNet](<http://www.image-net.org/download>)
+```data
+.
+├── train
+│   ├── n09399592
+│   ├── n07880968
+│   └── ...
+├── val
+│   ├── n07753275
+│   ├── n09246464
+│   └── ...
+├── train_list.txt
+└── val_list.txt
+```
 
 
-
+### <span id="start-pretraining-with-the-imagnet-dataset">**开始训练**</span>
 
 #### <span id="run-bash-examlple">**举例**</span>
-- 在GCU中跑图像分类任务运行脚本:
+- 在GCU中单卡性能测试脚本:
 
   ```bash
-  python train.py \
-    --device=gcu \
-    --data-path=imagenet_raw \
-    --batch-size=192 \
-    --num_classes=1000 \
-    --epochs=1 \
-    --workers=8 \
-    --training_step_per_epoch=300 \
-    --eval_step_per_epoch=300 \
-    --print-freq=20 \
+  python -u ./train.py
+    --device=gcu
+    --data-path=imagenet_raw
+    --batch-size=192
+    --num_classes=1000
+    --epochs=1
+    --model=vgg16
+    --workers=8
+    --training_step_per_epoch=300
+    --eval_step_per_epoch=300
+    --dropout_rate=0.0
+    --lr=0.01
+    --print-freq=20
     --skip_steps=5
   ```
 - 注意事项:
@@ -83,34 +96,86 @@ ImageNet千分类数据下载地址如下:
 
 测试脚本如下：
 
-- 对于单卡GCU测试脚本.
+- 对于单卡GCU测试性能
 
   ```bash
-  python train.py \
-    --device=gcu \
-    --model=vgg16 \
-    --data-path=imagenet_raw \
-    --batch-size=256 \
-    --num_classes=1000 \
-    --epochs=1 \
-    --workers=8 \
-    --training_step_per_epoch=300 \
-    --eval_step_per_epoch=300 \
-    --print-freq=20 \
+  python -u ./train.py
+    --device=gcu
+    --data-path=imagenet_raw
+    --batch-size=192
+    --num_classes=1000
+    --epochs=1
+    --model=vgg16
+    --workers=8
+    --training_step_per_epoch=300
+    --eval_step_per_epoch=300
+    --dropout_rate=0.0
+    --lr=0.01
+    --print-freq=20
     --skip_steps=5
   ```
 
-- 对于8卡GCU测试脚本.
+- 对于8卡GCU测试性能
 
   ```bash
-  python -u -m torch.distributed.launch --nproc_per_node=8 --standalone --use_env train.py \
-    --data-path=imagenet_raw --num_classes=1000 --model=vgg16 \
-    --device=gcu --batch-size=192  --workers=6 --epochs=90 --lr=0.06 \
-    --training_step_per_epoch=-1 --eval_step_per_epoch=-1 --print-freq=20 \
-    --skip_steps=10
+  python -u -m torch.distributed.launch --nproc_per_node=8 --master_addr=127.0.0.1 \
+      --master_port=34568 --use_env train.py \
+      --device=gcu
+      --data-path=imagenet_raw
+      --batch-size=192
+      --num_classes=1000
+      --epochs=1
+      --model=vgg16
+      --workers=8
+      --training_step_per_epoch=300
+      --eval_step_per_epoch=300
+      --dropout_rate=0.0
+      --lr=0.01
+      --print-freq=20
+      --skip_steps=5
   ```
+
+- 对于单卡GCU测试收敛
+
+  ```bash
+  python -u ./train.py
+    --device=gcu
+    --data-path=imagenet_raw
+    --batch-size=192
+    --num_classes=1000
+    --epochs=90
+    --model=vgg16
+    --workers=8
+    --training_step_per_epoch=-1
+    --eval_step_per_epoch=-1
+    --dropout_rate=0.5
+    --lr=0.01
+    --print-freq=20
+    --skip_steps=5
+  ```
+
+- 对于8卡GCU测试收敛
+
+  ```bash
+  python -u -m torch.distributed.launch --nproc_per_node=8 --master_addr=127.0.0.1 \
+      --master_port=34568 --use_env train.py \
+      --device=gcu
+      --data-path=imagenet_raw
+      --batch-size=192
+      --num_classes=1000
+      --epochs=90
+      --model=vgg16
+      --workers=8
+      --training_step_per_epoch=-1
+      --eval_step_per_epoch=-1
+      --dropout_rate=0.5
+      --lr=0.01
+      --print-freq=20
+      --skip_steps=5
+  ```
+
 数据类型为FP32，不开混精。
-## <span id="GCU-results">**GCU测试结果**</span>
+## <span id="gcu-results">**GCU测试结果**</span>
 
 ### <span id="training-accuracy-results">**训练精度**</span>
 
@@ -118,26 +183,10 @@ ImageNet千分类数据下载地址如下:
 
 | **Epochs** | **Batch Size** | **Accuracy** |
 | ---------- | -------------- | ------------------- |
-| 90          | 192             | 71.6                |
+| 90          | 192             | 71.3                |
 
 - 8卡GCU-T20精度测试结果.
 
 | **Epochs** | **Batch Size/GCU** | **Accuracy** |
 | ---------- | ------------------ | ------------------- |
-| 90          | 192                  | 71.6             |
-
-
-### <span id="training-performance-results">**训练性能**</span>
-
-- 单卡GCU-T20性能测试结果.
-
-| **Batch Size/GCU** |**fps** |
-| -------------- | --------------------- |
-| 256             |590.3466                    |
-
-
-- 8卡GCU-T20性能测试结果.
-
-| **Batch Size/GCU** |  **fps** |
-| ------------------ |  --------------------- |
-| 192                 |  431.6252             |
+| 90          | 192                  | 71.3             |

@@ -20,7 +20,6 @@
     - [**测试命令**](#training-performance-benchmark)
     - [**GCU测试结果**](#gcu-results)
       - [**训练精度**](#training-accuracy-results)
-      - [**训练性能**](#training-performance-results)
 
 ## <span id="model-introduction">**模型介绍**</span>
 
@@ -123,18 +122,3 @@ squad数据下载地址如下:
 | ---------- | ------------------ | ------------------- |
 | 2          | 8                  | 91.0               |
 
-
-### <span id="training-performance-results">**训练性能**</span>
-
-- 单卡GCU-T20性能测试结果.
-
-| **Batch Size/GCU** |**Throughput（sentence/s）** |
-| -------------- | --------------------- |
-| 8             |12.6                     |
-
-
-- 8卡GCU-T20性能测试结果.
-
-| **Batch Size/GCU** |  **Throughput（sentence/s）** |
-| ------------------ |  --------------------- |
-| 8                 |  78.1               |
