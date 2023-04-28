@@ -1,14 +1,37 @@
-README DBNet
+## README DBNet
 
-[toc]
+# 目录
+<!-- TOC -->
 
-## DBNet 描述
+- [目录](#目录)
+    - [DBNet描述](#DBNet描述)
+    - [模型架构](#模型架构)
+    - [数据集](#数据集)
+    - [模型文件](#模型文件)
+    - [目录结构](#目录结构)
+    - [环境要求](#环境要求)
+    - [快速入门](#快速入门)
+        - [安装环境依赖](#安装环境依赖)
+        - [设置PYTHONPATH](#设置PYTHONPATH)
+        - [运行](#运行)
+    - [脚本说明](#脚本说明)
+        - [脚本及样例代码](#脚本及样例代码)
+        - [脚本参数](#脚本参数)
+        - [评估过程](#评估过程)
+            - [评估](#评估)
+    - [模型描述](#模型描述)
+        - [模型精度](#模型精度)
+    - [随机情况说明](#随机情况说明)
+
+<!-- /TOC -->
+
+## DBNet描述
 
 DBNet 基于分割进行文本检测，是一个较为常用的模型。
 在一般基于分割的文本检测网络中，最终的二值化 map 都是使用的固定阈值来获取，并且阈值不同对性能影响较大。
 本方法对每一个像素点进行自适应二值化，二值化阈值由网络学习得到，彻底将二值化这一步骤加入到网络里一起训练，这样最终的输出图对于阈值就会非常鲁棒。
 
-[论文](https://arxiv.org/abs/1911.08947)
+[论文](https://arxiv.org/abs/1911.08947): Liao, Minghui and Wan, Zhaoyi and Yao, Cong and Chen, Kai and Bai, XiangLiao, Minghui and Wan, Zhaoyi and Yao, Cong and Chen, Kai and Bai, Xiang. Real-time Scene Text Detection with Differentiable Binarization. *Proc. AAAI*. 2020.
 
 ## 模型架构
 
@@ -81,7 +104,7 @@ data/
 pip install -r requirements.txt
 ```
 
-### 设置 PYTHONPATH
+### 设置PYTHONPATH
 
 - 您需要将 `common` 文件夹的上级目录加入到 `PYTHONPATH` 环境变量
 
@@ -184,9 +207,7 @@ python3 run_onnx.py --model model/dbnet-mv3-640x640-op13-fp32-N.onnx --dataset=.
 
 ## 模型描述
 
-### 性能
-
-#### 评估性能
+### 模型精度
 
 | 参数 | GCU <br>（FP16混合精度）| GCU <br>（FP32） | CPU <br>（FP32）|
 | :--------------------------: | :--------------------------: | :--------------------------: | :--------------------------: |

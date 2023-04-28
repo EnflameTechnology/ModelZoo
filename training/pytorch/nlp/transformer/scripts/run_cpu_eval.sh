@@ -1,8 +1,7 @@
 #! /bin/bash
-export ENFLAME_ENABLE_TF32=true
 
 DATA_PATH=./transformer_data_pytorch
-python -u train.py \
+python -u eval_gcu_ckpt.py \
     $DATA_PATH/wmt14_en_de_joined_dict \
     --share-all-embeddings \
     --skip-invalid-size-inputs-valid-test \
@@ -12,13 +11,12 @@ python -u train.py \
     --max-tokens=18432 \
     --max-sentences-valid=144 \
     --max-sentences=144 \
-    --max-epoch=40 \
+    --max-epoch=1 \
     --training_step_per_epoch=-1 \
     --eval_step_per_epoch=-1 \
     --warmup-init-lr=1e-09 \
     --warmup-updates=4000 \
-    --lr=0.0006 \
-    --dropout=0.1 \
+    --lr=0.000846 \
     --max-source-positions=128 \
     --max-target-positions=128 \
     --seed=1 \
