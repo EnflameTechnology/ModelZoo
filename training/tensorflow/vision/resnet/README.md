@@ -20,10 +20,7 @@ This repository provides comprehensive ResNet-50 v1.5 model introduction and scr
       - [**Training Performance Benchmark**](#training-performance-benchmark)
     - [**GCU Results On T20**](#gcu-results-on-t20)
       - [**Training Accuracy Results**](#training-accuracy-results)
-      - [**Training Performance Results**](#training-performance-results)
-    - [**GPU Results**](#gpu-results)
-      - [**Training Accuracy Results**](#training-accuracy-results-1)
-      - [**Training Performance Results**](#training-performance-results-1)
+
 
 ## <span id="model-introduction">**Model Introduction**</span>
 
@@ -267,14 +264,4 @@ To benchmark the training performance benchmark on a spcific batch size, run com
     | **Epochs** | **Batch Size/GCU**      | **Accuracy - TF32** |
     | ---------- | ----------------------- | ------------------- |
     | 90         | 128(TF32)               | 76.3                |
-
-
-#### <span id="training-performance-results">**Training Performance Results**</span>
-- Training performance(Throughput) for  GCU under different dtype with various batch size.
-
-    Our results were obtrained by runing the [Training Performance Benchmark](#training-performance-benchmark) on Enfalme GCU. Performance(images per second) were average over an entire training epoch.
-
-    | **Batch Size** | **Throughput - TF32**  |
-    | -------------- | ---------------------- |
-    | 128            | 584.8836814            |
 

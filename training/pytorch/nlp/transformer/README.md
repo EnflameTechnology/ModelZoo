@@ -20,7 +20,6 @@
     - [**测试命令**](#training-performance-benchmark)
     - [**GCU测试结果**](#gcu-results)
       - [**训练精度**](#training-accuracy-results)
-      - [**训练性能**](#training-performance-results)
 
 ## <span id="model-introduction">**模型介绍**</span>
 
@@ -100,6 +99,7 @@ squad数据下载地址如下:
   ```note
   1. 在run_squad_1gcu.sh中DATA_PATH变量替换为自己的路径。
   2. 如果想使用混精增加参数--amp即可，其它更多参数设置参考fairseq/options.py。
+  3. export ENFLAME_ENABLE_TF32=true 表示数据类型为TF32, 设置false时数据类型为FP32。
   ```
 
 ## <span id="performance">**结果**</span>
@@ -125,30 +125,9 @@ squad数据下载地址如下:
 
 ### <span id="training-accuracy-results">**训练精度**</span>
 
-- 单卡GCU-T20精度测试结果.
-
-| **Epochs** | **Batch Size** | **BLEU** |
-| ---------- | -------------- | ------------------- |
-| 3          | 144             | 25.5                |
-
 - 8卡GCU-T20精度测试结果.
 
 | **Epochs** | **Batch Size/GCU** | **BLEU** |
 | ---------- | ------------------ | ------------------- |
-| 3          | 144                  | 25.6              |
+| 15          | 144                  | 26.08              |
 
-
-### <span id="training-performance-results">**训练性能**</span>
-
-- 单卡GCU-T20性能测试结果.
-
-| **Batch Size/GCU** |**Throughput（sentence/s）** |
-| -------------- | --------------------- |
-| 144             |277                    |
-
-
-- 8卡GCU-T20性能测试结果.
-
-| **Batch Size/GCU** |  **Throughput（sentence/s）** |
-| ------------------ |  --------------------- |
-| 144                 |  1936               |

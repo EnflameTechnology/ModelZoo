@@ -1,4 +1,5 @@
 #! /bin/bash
+export ENFLAME_ENABLE_TF32=true
 
 DATA_PATH=./transformer_data_pytorch
 python -u train.py \
@@ -11,9 +12,9 @@ python -u train.py \
     --max-tokens=18432 \
     --max-sentences-valid=144 \
     --max-sentences=144 \
-    --max-epoch=2 \
-    --training_step_per_epoch=100 \
-    --eval_step_per_epoch=100 \
+    --max-epoch=1 \
+    --training_step_per_epoch=200 \
+    --eval_step_per_epoch=5 \
     --warmup-init-lr=1e-09 \
     --warmup-updates=4000 \
     --lr=0.0006 \
@@ -27,5 +28,5 @@ python -u train.py \
     --save-interval-updates=20000 \
     --model=transformer \
     --arch=transformer_wmt_en_de_base_t2t \
-    --stat-file=DGX1_fp32_static_dtu.json \
+    --stat-file=DGX1_fp32_static_gcu.json \
     --save-dir=runs
