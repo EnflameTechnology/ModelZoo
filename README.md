@@ -1,4 +1,4 @@
-Enflame ModelZoo
+欢迎使用 Enflame ModelZoo
 
 介绍
 Enflame ModelZoo是由燧原开发和维护的模型合集，提供人工智能各个应用领域(包括并不限于CV/NLP/推荐等)中经典和SOTA模型的训练和推理应用示例。

@@ -1,0 +1,4 @@
+protobuf==3.20.1; python_version >= '3.8'
+tensorboardX==2.4.1; platform_machine == 'x86_64' and python_version >= '3.8'
+tensorboardX==2.4.1; platform_machine == 'aarch64' and python_version >= '3.8'
+torch==1.10.0; python_version >= '3.8'
