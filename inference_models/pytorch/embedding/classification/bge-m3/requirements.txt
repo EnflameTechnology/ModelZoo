@@ -1,0 +1,5 @@
+jsonlines==4.0.0
+datasets==2.20.0
+transformers==4.44.2
+sentence-transformers==2.2.2
+huggingface-hub==0.25.2
