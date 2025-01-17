@@ -1,13 +1,15 @@
-Copyright 2024
+Copyright 2025
 
-[ModelZoo : 4.0]
+[ModelZoo : 2025v1]
 
 Phase: DEVELOPMENT
 Distribution: OPENSOURCE
 
 Components: 
 
+diffusers 0.15.1 : Apache License 2.0
 dtk 0.2 : MIT License
+facebookresearch/segment-anything 20230415-snapshot-567662b0 : Apache License 2.0
 fast-tts 0.0.3 : MIT License
 google/referring-manipulation 20220421-snapshot-4f328a81 : Apache License 2.0
 hpcaitech/ColossalAI v0.1.8 : Apache License 2.0
@@ -18,9 +20,9 @@ hpcaitech/open-sora v1.2.0 : Apache License 2.0
 hugging-gan-test 0.1.4 : MIT License
 magvit2-pytorch 0.0.22 : MIT License
 modelscope 1.4.0 : Apache License 2.0
+modelscope 1.9.2 : Apache License 2.0
 ms_adapter 0.1.0 : Apache License 2.0
 naifu 0.1 : MIT License
-NVIDIA/NeMo v1.19.0_mm : Apache License 2.0
 open-mmlab/mmdetection v2.2.0 : Apache License 2.0
 PaddlePaddle/PaddleHub v2.3.0 : Apache License 2.0
 ppdiffusers 0.16.2 : Apache License 2.0
@@ -33,6 +35,38 @@ ztransforms 0.2.0 : Apache License 2.0
 
 Copyright Text: 
 
+diffusers 0.15.1 pypi:diffusers/0.15.1
+	Copyright 2023 Stanford University Team and The HuggingFace Team. All rights reserved
+	Copyright 2023 UC Berkeley Team and The HuggingFace Team. All rights reserved
+	Copyright (c) 2021 OpenAI
+	Copyright 2023 The HuggingFace Inc. team.
+	Copyright 2022 The Music Spectrogram Diffusion Authors.
+	Copyright 2023 Katherine Crowson, The HuggingFace Team and hlky. All rights reserved
+	Copyright 2023 NVIDIA and The HuggingFace Team. All rights reserved
+	Copyright 2023 The InstructPix2Pix Authors and The HuggingFace Team. All rights reserved
+	Copyright 2023 Alibaba DAMO-VILAB and The HuggingFace Team. All rights reserved
+	Copyright 2023 Optuna, Hugging Face
+	Copyright 2023 Pix2Pix Zero Authors and The HuggingFace Team. All rights reserved
+	Copyright 2023 The HuggingFace Team. All rights reserved
+	Copyright 2023 ETH Zurich Computer Vision Lab and The HuggingFace Team. All rights reserved
+	Copyright 2023 Microsoft and The HuggingFace Team. All rights reserved
+	Copyright 2023 MultiDiffusion Authors and The HuggingFace Team. All rights reserved
+	Copyright 2023 Zhejiang University Team and The HuggingFace Team. All rights reserved
+	Copyright 2023 Google Brain and The HuggingFace Team. All rights reserved
+	Copyright 2023 TIME Authors and The HuggingFace Team. All rights reserved
+	Copyright 2023 TSAIL Team and The HuggingFace Team. All rights reserved
+	Copyright 2023 The ModelScope Team.
+	Copyright (c) 2022, NVIDIA CORPORATION.  All rights reserved
+	Copyright 2023 The HuggingFace Inc. team.
+	Copyright 2023 Susung Hong and The HuggingFace Team. All rights reserved
+	Copyright 2023 FLAIR Lab and The HuggingFace Team. All rights reserved
+	Copyright 2023 Kakao Brain and The HuggingFace Team. All rights reserved
+	Copyright 2023 Alibaba DAMO-VILAB, The ModelScope Team and The HuggingFace Team. All rights reserved
+	Copyright 2023 Katherine Crowson and The HuggingFace Team. All rights reserved
+	Copyright 2023 The HuggingFace Inc. team. All rights reserved
+facebookresearch/segment-anything 20230415-snapshot-567662b0 github:facebookresearch/segment-anything:567662b0fd33ca4b022d94d3b8de896628cd32dd
+	Copyright (c) Facebook, Inc. and its affiliates.
+	Copyright (c) Meta Platforms, Inc. and affiliates.
 fast-tts 0.0.3 pypi:fast-tts/0.0.3
 	Copyright (c) 2017, Prem SeetharamanAll rights reserved
 	Copyright (c) 2022 NVIDIA CORPORATION.
@@ -496,6 +530,399 @@ modelscope 1.4.0 pypi:modelscope/1.4.0
 	Copyright (c) Alibaba, Inc. and its affiliates.# The ZenNAS implementation is also open-sourced by the authors, and available at https://github.com/idstcv/ZenNAS.
 	Copyright (c) Alibaba, Inc. and its affiliates.""" This ECAPA-TDNN implementation is adapted from https://github.com/speechbrain/speechbrain."""import mathimport osfrom typing import Any, Dict, U
 	Copyright (c) Alibaba, Inc. and its affiliates.# This file is adapted from the AllenNLP library at https://github.com/allenai/allennlpimport copyimport importlibimport osimport pkgutilimport sys
+	Copyright (c) Alibaba, Inc. and its affiliates."""UniTE model configuration"""
+	Copyright (c) Alibaba, Inc. and its affiliates.# yapf: disable
+	Copyright (c) Facebook, Inc. and its affiliates.
+	Copyright (c) Facebook, Inc. and its affiliates. All rights reserved
+	Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+	Copyright (c) Facebook, Inc. and its affiliates.# Modified by Bowen Cheng from https://github.com/fundamentalvision/Deformable-DETR
+	Copyright (c) Megvii Inc. All rights reserved
+	Copyright (c) Meta Platforms, Inc. and affiliates. All Rights Reserved
+	Copyright (c) Microsoft
+	Copyright (c) Open-MMLab. All rights reserved
+	Copyright (c) OpenMMLab. All rights reserved
+	Copyright (c) rhythmcao modified from https://github.com/rhythmcao/text2sql-lgesql.
+	Copyright from https://github.com/thu-spmi/LABES
+	Copyright from https://github.com/TonyNemo/UBAR-MultiWOZ
+	Copyright LuChengTHU Authors.
+modelscope 1.9.2 pypi:modelscope/1.9.2
+	(C) dimensionality, 0 = no label.        w_dim,  # Intermediate latent (W) dimensionality.        num_ws,  # Number of intermediate latents to output, None = do not broadcast.        num_layers=8, 
+	(C) dimensionality.            img_resolution,  # Input resolution.            img_channels,  # Number of input color channels.            architecture='resnet',  # Architecture: 'orig', 'skip', 'r
+	(C) dimensionality.            w_dim,  # Intermediate latent (W) dimensionality.            img_resolution,  # Output resolution.            img_channels,  # Number of output color channels.      
+	Copyright 2016 The TensorFlow Authors. All Rights Reserved
+	Copyright 2017-2022 The Alibaba MT Team Authors. All rights reserved
+	Copyright 2017 Baidu.com, Inc. All Rights Reserved
+	Copyright 2018-2020 BasicSR Authors# ------------------------------------------------------------------------
+	Copyright 2018 Google AI, Google Brain and Carnegie Mellon University Authors and the HuggingFace Inc. team.
+	Copyright 2018 Mesh TensorFlow authors, T5 Authors and HuggingFace Inc. team.
+	Copyright  2018  Northwestern Polytechnical University (author: Ke Wang)
+	Copyright  2018  Northwestern Polytechnical University (author: Ke Wang)
+	Copyright 2018 The Google AI Language Team Authors.
+	Copyright 2018 The Google AI Language Team Authors and The HugginFace Inc. team.
+	Copyright 2018 The Google AI Language Team Authors and The HugginFace Inc. team and Alibaba inc.
+	Copyright 2018 The Google AI Language Team Authors and The HuggingFace Inc. team.
+	Copyright 2018 The Google AI Language Team Authors and The HuggingFace Inc. team.
+	Copyright 2018 The HuggingFace Inc. team.
+	Copyright 2018 The Open AI Team Authors and The HuggingFace Inc. team.
+	Copyright 2018 The TensorFlow Authors. All Rights Reserved
+	Copyright 2019 Facebook AI Research and the HuggingFace Inc. team.
+	Copyright 2019 Mobvoi Inc. All Rights Reserved
+	Copyright 2019 The Google AI Language Team Authors and The HuggingFace Inc. team.
+	Copyright 2020 Heinrich Heine University Duesseldorf
+	Copyright 2020 Heinrich Heine University Duesseldorf
+	Copyright 2020 Microsoft and the Hugging Face Inc. team.
+	Copyright 2020 Microsoft and the HuggingFace Inc. team.
+	Copyright 2020, Microsoft and the HuggingFace Inc. team.
+	Copyright 2020 The HuggingFace Inc. team
+	Copyright 2020 The HuggingFace Inc. team.
+	Copyright 2020 The HuggingFace Team. All rights reserved
+	Copyright 2020 The Microsoft DeepSpeed Team'''
+	Copyright 2020, The T5 Authors and HuggingFace Inc.
+	Copyright 2021-2022 The Alibaba DAMO Duguang Team Authors. All rights reserved
+	Copyright 2021-2022 The Alibaba DAMO NLP Team Authors.
+	Copyright 2021-2022 The Alibaba DAMO NLP Team Authors. All rights reserved
+	Copyright 2021-2022 The Alibaba DAMO Team Authors.
+	Copyright 2021-2022 The Alibaba DAMO Team Authors. All rights reserved
+	Copyright 2021-2022 The Alibaba Fundamental Vision  Team Authors. All rights reserved
+	Copyright 2021-2022 The Alibaba Fundamental Vision Team Authors.# All rights reserved
+	Copyright 2021-2022 The Alibaba Fundamental Vision Team Authors. All rights reserved
+	Copyright 2021-2022 The Alibaba Fundamental Vision Team Authors.from typing import TYPE_CHECKING
+	Copyright 2021-2022 The Alibaba FVI Team Authors. All rights reserved
+	Copyright 2021-2022 The Alibaba PAI Team Authors.
+	Copyright 2021-2022 The Alibaba Vision Team Authors. All rights reserved
+	Copyright 2021-2023 The Alibaba DAMO mPLUG Authors.
+	Copyright 2021-2023 The Alibaba DAMO mPLUG Team Authors.
+	Copyright 2021 DeepMind Technologies Limited
+	Copyright 2021-present NAVER Corp.
+	Copyright 2021 The Microsoft DeepSpeed Team'''# The file has been adapted from two fairscale files:
+	Copyright 2021 The OpenAI CLIP Authors. All rights reserved
+	Copyright 2021 The OpenAI Team Authors.
+	Copyright: 2022-03-09 yueyue.nyy'''
+	Copyright 2022-2023 The Alibaba Fundamental Vision  Team Authors. All rights reserved
+	Copyright 2022-2023 The Alibaba Fundamental Vision Team Authors. All rights reserved
+	Copyright 2022-2023 The Alibaba MT Team Authors. All rights reserved
+	Copyright 2022 Alibaba Group and The HuggingFace Inc. team. All rights reserved
+	Copyright 2022 Davide Abati.
+	Copyright 2022 EleutherAI and the HuggingFace Inc. team. All rights reserved
+	Copyright 2022 EleutherAI and The HuggingFace Inc. team. All rights reserved
+	Copyright 2022 OFA-Sys Team. All rights reserved
+	Copyright 2022 Phil Wang.
+	Copyright 2022 The Alibaba Fundamental Vision Team Authors. All rights reserved
+	Copyright 2022 The HuggingFace Team.
+	Copyright 2022 The HuggingFace Team,# and publicly available at# https://github.com/huggingface/diffusers/blob/main/src/diffusers/pipelines/stable_diffusion/pipeline_stable_diffusion.py
+	Copyright 2022 The OFA-Sys Team.
+	Copyright 2023-2024 The Alibaba Fundamental Vision Team Authors. All rights reserved
+	Copyright 2023 The Alibaba Fundamental Vision Team Authors. All rights reserved
+	Copyright 2023 The HuggingFace Team
+	Copyright 2023 The HuggingFace Team.
+	Copyright © Alibaba, Inc. and its affiliates.
+	Copyright © Alibaba, Inc. and its affiliates.
+	Copyright © Alibaba, Inc. and its affiliates.from modelscope.models.cv.tinynas_detection.damo.augmentations.scale_aware_aug import \    SA_Augfrom . import transforms as T
+	Copyright © Alibaba, Inc. and its affiliates.from modelscope.models.cv.tinynas_detection.damo.structures.image_list import \    to_image_list
+	Copyright © Alibaba, Inc. and its affiliates.from torch.utils.data.sampler import BatchSampler
+	Copyright © Alibaba, Inc. and its affiliates.import bisectimport copyimport math
+	Copyright © Alibaba, Inc. and its affiliates.import cv2import numpy as npimport torchfrom torchvision.datasets.coco import CocoDetection
+	Copyright © Alibaba, Inc. and its affiliates.import osfrom typing import Any, Dict, Optional
+	Copyright © Alibaba, Inc. and its affiliates.import osimport randomfrom typing import Any, Dict
+	Copyright © Alibaba, Inc. and its affiliates.import random
+	Copyright © Alibaba, Inc. and its affiliates.import randomfrom typing import Any, Dict
+	Copyright by the AllenNLP authors."""from __future__ import (absolute_import, division, print_function,                        unicode_literals)import loggingimport osimport shutilimport sysim
+	Copyright (c) 2014-2021 Megvii Inc.
+	Copyright (c) 2018-2022 OpenMMLab,# https://github.com/open-mmlab/mmsegmentation/,
+	Copyright (c) 2018, NVIDIA CORPORATION.
+	Copyright (c) 2018, NVIDIA CORPORATION.  All rights reserved
+	Copyright (c) 2018-present, Facebook, Inc. All rights reserved
+	Copyright (c) 2019, NVIDIA Corporation. All rights reserved
+	Copyright (c) 2019, NVIDIA CORPORATION.  All rights reserved
+	Copyright (c) 2020-2021 OpenMMLab,# and adapted from https://github.com/raoyongming/DenseCLIP/,
+	Copyright (c) 2020 Binbin Zhang
+	Copyright (C) 2020. Huawei Technologies Co., Ltd. All rights reserved
+	Copyright (c) 2020, NVIDIA CORPORATION.  All rights reserved
+	Copyright (c) 2020, salesforce.com, inc.
+	Copyright (c) 2020 SenseTime. All Rights Reserved
+	Copyright (c) 2021-2022 NVIDIA CORPORATION
+	Copyright (c) 2021 Binbin Zhang
+	Copyright (c) 2021 Binbin Zhang(binbzha@qq.com)
+	Copyright (c) 2021, Evlampios Apostolidis, Georgios Balaouras, Vasileios Mezaris,# Ioannis Patras / CERTH-ITI. All rights reserved
+	Copyright (c) 2021 Intelligent Systems Lab Org.
+	Copyright (c) 2021 KakaoBrain. All Rights Reserved
+	Copyright (c) 2021 Microsoft
+	Copyright (c) 2021 Mobvoi Inc. (authors: Binbin Zhang)
+	Copyright (C) 2021 NVIDIA Corporation.  All rights reserved
+	Copyright (c) 2021 OpenAI
+	Copyright (c) 2021 OpenAI.
+	Copyright (c) 2021 OpenAI,# and publicly available at https://github.com/openai/CLIP/.
+	Copyright (c) 2021 OpenAI,# and publicly available at https://github.com/openai/CLIP/.""" CLIP Tokenizer."""
+	Copyright (c) 2021 OpenAI,# and publicly available at https://github.com/openai/CLIP/.""" Generative Multimodal Model Architecture."""
+	Copyright (c) 2021 OpenAI,# and publicly available at https://github.com/openai/CLIP/.# The implementation here is modified based on Coca-pytorch,
+	Copyright (c) 2021 Peng Wang.
+	Copyright (c) 2021 Peng Wang.# ------------------------------------------------------------------------
+	Copyright (c) 2021 Peng Wang. All Rights Reserved
+	Copyright (c) 2022-2023 Alibaba, Inc. and its affiliates. All rights reserved
+	Copyright (c) 2022 Davide Abati,# and publicly available at https://github.com/DavideA/c3d-pytorch""" C3D Model Architecture."""
+	Copyright (c) 2022 Kensho Hara.
+	Copyright (c) 2022 Kensho Hara,# and publicly available at https://github.com/kenshohara/3D-ResNets-PyTorch/blob/master/models/resnet2p1d.py""" ResNet2plus1d Model Architecture."""
+	Copyright (c) 2022 Kensho Hara,# and publicly available at https://github.com/kenshohara/3D-ResNets-PyTorch/blob/master/models/resnet.py""" ResNet3D Model Architecture."""
+	Copyright (c) 2022 megvii-model. All Rights Reserved
+	Copyright (c) 2022 Petr Kellnhofer
+	Copyright (c) 2022 Phil Wang,# and publicly available at https://github.com/lucidrains/CoCa-pytorch/,""" Generative Multimodal Model Architecture."""
+	Copyright (c) 2022 Rao, Yongming.
+	Copyright (c) 2022 Zhipu.AI
+	Copyright (c) 2022 Zhipu.AI
+	Copyright (c) 2022 Zhipu.AIfrom typing import List, Union
+	Copyright (c) 2022 Zhipu.AIimport copyfrom typing import Any, Dict
+	Copyright (c) 2022 Zhipu.AIimport copyimport osimport randomimport reimport statimport sysimport timefrom functools import partialfrom typing import Any, Dict, List, Tuple
+	Copyright (c) 2022 Zhipu.AIimport ctypesfrom typing import List
+	Copyright (c) 2022 Zhipu.AIimport math
+	Copyright (c) 2022 Zhipu.AIimport numpy as npimport torchimport torch.nn.functional as Ffrom SwissArmyTransformer.generation.sampling_strategies.base_strategy import \    top_k_logits
+	Copyright (c) 2022 Zhipu.AIimport osfrom typing import Any, Dict, List, Optional, Union
+	Copyright (c) 2022 Zhipu.AIimport osfrom typing import Any, Dict, Union
+	Copyright (c) 2022 Zhipu.AIimport torch
+	Copyright (c) 2022 Zhipu.AIimport torchfrom SwissArmyTransformer.mpu import (ColumnParallelLinear, RowParallelLinear,                                      copy_to_model_parallel_region,           
+	Copyright (c) 2022 Zhipu.AI"""Multiple choice model."""
+	Copyright (c) 2023, ETH Zurich and UNC Chapel Hill.# All rights reserved
+	Copyright (c) 2023 TencentARC. All Rights Reserved
+	Copyright (c) Alibaba Cloud.
+	Copyright (c) Alibaba, Inc. and its affiliates.
+	Copyright (c) Alibaba, Inc. and its affiliates.
+	Copyright (c) Alibaba, Inc. and its affiliates.# ------------------------------------------------------------------------
+	Copyright (c) Alibaba, Inc. and its affiliates.bfm_folder = ''bfm_model = 'head_model_for_maas.mat'camera_d = 10.0center = 112.0focal = 1015.0isTrain = Falsenet_recon = 'resnet50'phase = 'test
+	Copyright (c) Alibaba, Inc. and its affiliates.class Pix2PixOptions():
+	Copyright (c) Alibaba, Inc. and its affiliates."""Define TTS exceptions
+	Copyright (c) Alibaba, Inc. and its affiliates.# Following code is partialy borrowed from openmmlab/mmcvimport functoolsimport osimport pickleimport randomimport socketimport subprocessimport 
+	Copyright (c) Alibaba, Inc. and its affiliates.from abc import ABC, abstractmethodfrom typing import Any, Dict, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.from abc import ABC, abstractmethodfrom typing import Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.from abc import ABCMeta, abstractmethod
+	Copyright (c) Alibaba, Inc. and its affiliates.from .asr import OfaASRPreprocessorfrom .image_captioning import OfaImageCaptioningPreprocessorfrom .image_classification import OfaImageClassificatio
+	Copyright (c) Alibaba, Inc. and its affiliates.from .backbones import build_backbonefrom .heads import build_head
+	Copyright (c) Alibaba, Inc. and its affiliates.from .beit_v2 import BEiTv2
+	Copyright (c) Alibaba, Inc. and its affiliates.from .builder import OPTIMIZERS, build_optimizerfrom .child_tuning_adamw_optimizer import ChildTuningAdamW
+	Copyright (c) Alibaba, Inc. and its affiliates.from .builder import PARALLEL
+	Copyright (c) Alibaba, Inc. and its affiliates.from .build import build_dataloader, build_dataset
+	Copyright (c) Alibaba, Inc. and its affiliates.from .coco import COCODatasetfrom .mosaic_wrapper import MosaicWrapper
+	Copyright (c) Alibaba, Inc. and its affiliates.from collections.abc import Mapping
+	Copyright (c) Alibaba, Inc. and its affiliates.from collections import OrderedDict
+	Copyright (c) Alibaba, Inc. and its affiliates.from collections import OrderedDictfrom typing import Dict, Generator
+	Copyright (c) Alibaba, Inc. and its affiliates.from collections import OrderedDictfrom typing import Optional
+	Copyright (c) Alibaba, Inc. and its affiliates.from collections import OrderedDict, namedtuplefrom dataclasses import dataclass, fieldsfrom typing import Dict, List, Tuple
+	Copyright (c) Alibaba, Inc. and its affiliates.from .config import get_configfrom .model import EffnetSphDecoderNet, ResnetSphDecoderNet, SwinSphDecoderNet
+	Copyright (c) Alibaba, Inc. and its affiliates.from copy import deepcopy
+	Copyright (c) Alibaba, Inc. and its affiliates.from .criterion import SetCriterion, flatten_temporal_batch_dimsfrom .matcher import HungarianMatcherfrom .misc import interpolate, nested_tensor_from
+	Copyright (c) Alibaba, Inc. and its affiliates.from .data_loader import DataLoaderfrom .image_dataset import ImageDataset
+	Copyright (c) Alibaba, Inc. and its affiliates.from enum import Enumfrom typing import Union
+	Copyright (c) Alibaba, Inc. and its affiliates.from .equi import Equi
+	Copyright (c) Alibaba, Inc. and its affiliates.from functools import lru_cache
+	Copyright (c) Alibaba, Inc. and its affiliates.from functools import wraps
+	Copyright (c) Alibaba, Inc. and its affiliates.from __future__ import absolute_import, division, print_functionfrom collections import OrderedDict
+	Copyright (c) Alibaba, Inc. and its affiliates.from .gen_unified_transformer import GenUnifiedTransformerfrom .generator import SpaceGeneratorfrom .intent_unified_transformer import IntentUnifiedTr
+	Copyright (c) Alibaba, Inc. and its affiliates.from .mask_scoring_roi_head import MaskScoringNRoIHeadfrom .roi_extractors import SingleRoINExtractor
+	Copyright (c) Alibaba, Inc. and its affiliates.from modelscope.metainfo import Hooksfrom modelscope.trainers.hooks.builder import HOOKSfrom modelscope.trainers.hooks.hook import Hookfrom modelscop
+	Copyright (c) Alibaba, Inc. and its affiliates.from modelscope.metainfo import LR_Schedulersfrom modelscope.trainers.lrscheduler.builder import LR_SCHEDULERfrom .base import BaseWarmup
+	Copyright (c) Alibaba, Inc. and its affiliates.from modelscope.metainfo import Modelsfrom modelscope.utils.config import ConfigDictfrom modelscope.utils.constant import Tasksfrom modelscope.utils.
+	Copyright (c) Alibaba, Inc. and its affiliates.from modelscope.metainfo import Pipelinesfrom modelscope.models.cv.ocr_recognition import OCRRecognitionfrom modelscope.outputs import OutputKeysfrom
+	Copyright (c) Alibaba, Inc. and its affiliates.from modelscope.metainfo import Trainersfrom modelscope.pipelines.builder import normalize_model_inputfrom modelscope.pipelines.util import is_officia
+	Copyright (c) Alibaba, Inc. and its affiliates.from modelscope.metainfo import Trainersfrom modelscope.trainers.builder import TRAINERSfrom modelscope.trainers.cv.face_detection_scrfd_trainer impor
+	Copyright (c) Alibaba, Inc. and its affiliates.from modelscope.metainfo import Trainersfrom modelscope.trainers.builder import TRAINERSfrom modelscope.trainers.trainer import EpochBasedTrainer
+	Copyright (c) Alibaba, Inc. and its affiliates.from modelscope.metainfo import Trainersfrom modelscope.trainers import EpochBasedTrainerfrom modelscope.trainers.builder import TRAINERSfrom modelsc
+	Copyright (c) Alibaba, Inc. and its affiliates.from modelscope.outputs import OutputKeysfrom modelscope.utils.constant import Tasks
+	Copyright (c) Alibaba, Inc. and its affiliates.from modelscope.utils.constant import Fields, Tasks
+	Copyright (c) Alibaba, Inc. and its affiliates.from modelscope.utils.registry import Registry, build_from_cfg, default_group
+	Copyright (c) Alibaba, Inc. and its affiliates.from .ostrack import OSTrack
+	Copyright (c) Alibaba, Inc. and its affiliates.from .preprocessor import SCRFDPreprocessorfrom .scrfd_detect import ScrfdDetect
+	Copyright (c) Alibaba, Inc. and its affiliates.from .resnet_DA import ResnetDA
+	Copyright (c) Alibaba, Inc. and its affiliates.from .save_op import get_pred_boundary, pred2scene, scene2videofrom .shot_encoder import resnet50
+	Copyright (c) Alibaba, Inc. and its affiliates.from .single_level_roi_extractor import SingleRoINExtractor
+	Copyright (c) Alibaba, Inc. and its affiliates.from .stable_diffusion import StableDiffusion
+	Copyright (c) Alibaba, Inc. and its affiliates.from torch.optim.lr_scheduler import _LRScheduler
+	Copyright (c) Alibaba, Inc. and its affiliates.from transformers import BloomConfigfrom transformers import BloomModel as BloomModelTransform
+	Copyright (c) Alibaba, Inc. and its affiliates.from transformers import BloomForCausalLM as BloomForCausalLMTransform
+	Copyright (c) Alibaba, Inc. and its affiliates.from transformers import GPT2Configfrom transformers import GPT2Model as GPT2ModelTransform
+	Copyright (c) Alibaba, Inc. and its affiliates.from transformers import GPTNeoConfigfrom transformers import GPTNeoModel as GPTNeoModelTransform
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import Any, Callable, Dict, Iterator, List, Tuple, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import Any, Dict, List, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import Any, Dict, List, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import Any, Dict, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import Any, Dict, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import Any, List, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import Dict, Mapping, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import List
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import Optional
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import TYPE_CHECKING
+	Copyright (c) Alibaba, Inc. and its affiliates.from typing import TYPE_CHECKING, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.from .unet import DynamicUnetDeep, DynamicUnetWide
+	Copyright (c) Alibaba, Inc. and its affiliates.import argparse
+	Copyright (c) Alibaba, Inc. and its affiliates.import argparseimport logging as loggerimport osimport os.path as ospimport time
+	Copyright (c) Alibaba, Inc. and its affiliates.import argparseimport mathimport osimport os.path as ospfrom array import array
+	Copyright (c) Alibaba, Inc. and its affiliates.import astimport base64import importlibimport inspectimport osfrom io import BytesIOfrom typing import Anyfrom urllib.parse import urlparse
+	Copyright (c) Alibaba, Inc. and its affiliates.import collections.abcimport mathimport os.path as ospfrom itertools import repeat
+	Copyright (c) Alibaba, Inc. and its affiliates.import collectionsimport ioimport osimport sysfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import copy
+	Copyright (c) Alibaba, Inc. and its affiliates.import copyimport datetimeimport mathimport osimport timefrom typing import Callable, Dict, Optional
+	Copyright (c) Alibaba, Inc. and its affiliates.import copyimport datetimeimport osimport refrom typing import Callable, Dict, Optional
+	Copyright (c) Alibaba, Inc. and its affiliates.import copyimport mathfrom os.path import joinfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import copyimport osfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import copyimport osimport os.path as ospimport timefrom typing import Callable, Dict, Optional
+	Copyright (c) Alibaba, Inc. and its affiliates.import cv2import numpy as npfrom scipy.ndimage import map_coordinates
+	Copyright (c) Alibaba, Inc. and its affiliates.import cv2import numpy as npimport pyclipperfrom shapely.geometry import Polygon
+	Copyright (c) Alibaba, Inc. and its affiliates.import datetimeimport mathimport osimport timefrom typing import Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import datetimeimport osimport os.path as ospfrom collections import OrderedDict
+	Copyright (c) Alibaba, Inc. and its affiliates.import enum
+	Copyright (c) Alibaba, Inc. and its affiliates.import functoolsfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import functoolsimport osfrom typing import Any, Dict, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import globimport mathimport osimport os.path as ospimport subprocessimport tempfilefrom typing import Any, Dict, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import globimport mathimport osimport subprocessimport tempfilefrom typing import Any, Dict, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import globimport osimport time
+	Copyright (c) Alibaba, Inc. and its affiliates.import globimport osimport timefrom functools import partial
+	Copyright (c) Alibaba, Inc. and its affiliates.import inspect
+	Copyright (c) Alibaba, Inc. and its affiliates.import inspectfrom typing import Iterable, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import inspectimport osfrom collections.abc import Mappingfrom copy import deepcopyfrom distutils.version import LooseVersionfrom functools import 
+	Copyright (c) Alibaba, Inc. and its affiliates.import iofrom typing import Any, Dict, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import ioimport osfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import ioimport osimport reimport stringfrom os import path as osp
+	Copyright (c) Alibaba, Inc. and its affiliates.import ioimport osimport shutilfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import ioimport os.path as ospimport sysfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import json
+	Copyright (c) Alibaba, Inc. and its affiliates.import logging
+	Copyright (c) Alibaba, Inc. and its affiliates.import loggingfrom typing import Callable, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import loggingimport osimport pickleimport shutilfrom collections.abc import Mapping
+	Copyright (c) Alibaba, Inc. and its affiliates.import math
+	Copyright (c) Alibaba, Inc. and its affiliates.import mathfrom functools import partial
+	Copyright (c) Alibaba, Inc. and its affiliates.# ------------------------------------------------------------------------import mathfrom math import expfrom typing import Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import mathfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import mathimport os
+	Copyright (c) Alibaba, Inc. and its affiliates.import mathimport osfrom collections import OrderedDictfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import mathimport osfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import mathimport osimport os.path as ospfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import mathimport osimport reimport stringfrom functools import partialfrom os import path as ospfrom typing import Any, Callable, Dict, List, Opt
+	Copyright (c) Alibaba, Inc. and its affiliates.import mathimport os.path as ospfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import mathimport os.path as ospfrom typing import Any, Dict, List, Optional, Tuple
+	Copyright (c) Alibaba, Inc. and its affiliates.import mathimport os.path as ospfrom typing import Any, Dict, List, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import mathimport os.path as ospfrom typing import Any, Dict, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import mathimport tempfilefrom typing import Any, Dict, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import numbersfrom abc import ABCMeta, abstractmethod
+	Copyright (c) Alibaba, Inc. and its affiliates.import numbersimport osimport pdbfrom collections import deque
+	Copyright (c) Alibaba, Inc. and its affiliates.import numbersimport os.path as ospfrom typing import Dict, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import numpy as np
+	Copyright (c) Alibaba, Inc. and its affiliates.import numpy as npfrom PIL import Imagefrom scipy.fft import fft2, ifft2
+	Copyright (c) Alibaba, Inc. and its affiliates.import numpy as npfrom scipy.ndimage import map_coordinatesfrom scipy.spatial.distance import pdist, squareformfrom sklearn.decomposition import PCA
+	Copyright (c) Alibaba, Inc. and its affiliates.import numpy as npimport tensorflow as tf
+	Copyright (c) Alibaba, Inc. and its affiliates.import numpy as npimport torch
+	Copyright (c) Alibaba, Inc. and its affiliates.import numpy as npimport torchfrom torch._C import dtype
+	Copyright (c) Alibaba, Inc. and its affiliates.import numpy as npimport torchimport torch.fftimport torch.nn as nnimport torch.nn.functional as F
+	Copyright (c) Alibaba, Inc. and its affiliates.import numpy as npimport torchimport torch.nn as nnimport torch.nn.functional as F
+	Copyright (c) Alibaba, Inc. and its affiliates.import numpy as npimport torchimport torch.nn as nnimport torch.nn.functional as Ffrom kornia.geometry import warp_affine
+	Copyright (c) Alibaba, Inc. and its affiliates.import numpy as npimport torchimport torch.nn as nnimport torch.nn.functional as Ffrom scipy.signal import get_window
+	Copyright (c) Alibaba, Inc. and its affiliates.import numpy as npimport torchimport torch.nn as nnimport torch.nn.functional as Fimport torch.utils.checkpoint as checkpointfrom timm.models.layer
+	Copyright (c) Alibaba, Inc. and its affiliates.import os
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom abc import ABC, abstractmethodfrom typing import Any, Callable, Dict, Optional, Sequence, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom abc import ABC, abstractmethodfrom typing import Dict, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom argparse import ArgumentParserfrom string import Template
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom collections import namedtuplefrom math import lgamma
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom collections import OrderedDict
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom collections import OrderedDictfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom contextlib import contextmanager
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom contextlib import contextmanagerfrom itertools import chainfrom typing import Any, Dict, Mapping
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom copy import deepcopyfrom typing import Any, Dict, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom dataclasses import dataclassfrom typing import Any, Dict, Optional, Tuple
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom functools import partialfrom typing import Mapping
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom typing import Any, Callable, Dict, Mapping
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom typing import Any, Dict, List, Optional, Sequence, Tuple, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom typing import Any, Dict, List, Sequence, Tuple, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom typing import Any, Dict, List, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom typing import Any, Dict, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom typing import Any, Dict, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osfrom typing import Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport os.path as osp
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport os.path as ospfrom abc import ABC, abstractmethodfrom typing import Any, Dict, List, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport os.path as ospfrom glob import glob
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport os.path as ospfrom tempfile import TemporaryDirectoryfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport os.path as ospfrom typing import Any, Dict, List, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport os.path as ospimport pkgutilimport warningsfrom collections import OrderedDictfrom importlib import import_module
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport os.path as ospimport timefrom typing import Dict, Optional
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport pickle
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport pkgutilimport warningsfrom importlib import import_module
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport randomimport shutilfrom typing import Optional
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport reimport shutil
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport reimport shutilimport structimport sysimport tempfilefrom typing import Unionfrom urllib.parse import urlparse
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport reimport stringfrom collections import Counter
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport reimport sys
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport shutilfrom tempfile import TemporaryDirectoryfrom typing import Any, Dict, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport shutilfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport shutilfrom typing import Any, Dict, List, Optional, Sequence, Tuple, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport shutilfrom typing import Any, Dict, List, Sequence, Tuple, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport shutilfrom typing import Dict, List, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport shutilimport tempfilefrom argparse import ArgumentParserfrom string import Template
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport shutilimport tempfilefrom typing import Dict, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport shutilimport tempfileimport zipfilefrom typing import Callable, Dict, List, Optional, Tuple, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import osimport subprocessimport tempfilefrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.path as osp
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.path as ospfrom collections import OrderedDictfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.path as ospfrom copy import deepcopyfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.path as ospfrom copy import deepcopyfrom typing import Any, Dict, List, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.path as ospfrom copy import deepcopyfrom typing import Dict, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.path as ospfrom typing import Any, Dict
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.path as ospfrom typing import Any, Dict, List, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.path as ospfrom typing import Dict, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.path as ospfrom typing import List, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.path as ospfrom typing import Optional
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.pathfrom typing import Any, Dict, List, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.pathfrom typing import Any, Dict, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import os.pathimport refrom abc import ABCfrom collections import OrderedDictfrom typing import Any, Dict, Optional
+	Copyright (c) Alibaba, Inc. and its affiliates.import pdbimport timefrom typing import Any, Dict, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import randomfrom typing import Any, List, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import randomfrom typing import Optional
+	Copyright (c) Alibaba, Inc. and its affiliates.import re
+	Copyright (c) Alibaba, Inc. and its affiliates.import refrom copy import deepcopyfrom dataclasses import dataclass, field, fieldsfrom typing import List, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import sqlite3
+	Copyright (c) Alibaba, Inc. and its affiliates.import sysfrom typing import List, Tuple
+	Copyright (c) Alibaba, Inc. and its affiliates.import time
+	Copyright (c) Alibaba, Inc. and its affiliates.import timefrom collections.abc import Mapping
+	Copyright (c) Alibaba, Inc. and its affiliates.import timefrom typing import Dict, List, Optional, Tuple, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import torch
+	Copyright (c) Alibaba, Inc. and its affiliates.import torchfrom torch import nn
+	Copyright (c) Alibaba, Inc. and its affiliates.import torchimport torch.nn as nn
+	Copyright (c) Alibaba, Inc. and its affiliates.import torchimport torch.nn as nnfrom torch.nn import functional as F
+	Copyright (c) Alibaba, Inc. and its affiliates.import torchimport torch.nn as nnimport torch.nn.functional as F
+	Copyright (c) Alibaba, Inc. and its affiliates.import torchimport torch.nn as nnimport torch.nn.functional as Ffrom mmcv.cnn import ConvModule
+	Copyright (c) Alibaba, Inc. and its affiliates.import torchimport torch.nn.functional as Ffrom mmdet.models.builder import HEADS
+	copyright (c) Alibaba, Inc. and its affiliates.import torchimport torch.nn.functional as Ffrom torch import nn
+	copyright (c) Alibaba, Inc. and its affiliates.import torchimport torch.nn.functional as Ffrom torch import nnfrom torch.nn import CrossEntropyLoss
+	Copyright (c) Alibaba, Inc. and its affiliates.import torchimport torch.nn.functional as Ffrom torch import nnfrom torch.nn import Parameter
+	Copyright (c) Alibaba, Inc. and its affiliates.import torchimport torch.nn.functional as funct
+	Copyright (c) Alibaba, Inc. and its affiliates.import torchimport torchvision.transforms as transformsfrom PIL import Imagefrom torch.optim import AdamW
+	Copyright (c) Alibaba, Inc. and its affiliates.import torch.nn as nn
+	Copyright (c) Alibaba, Inc. and its affiliates.import typesimport warningsfrom contextlib import contextmanagerfrom typing import Any, Dict, Generator, List, Optional, Union
+	Copyright (c) Alibaba, Inc. and its affiliates.import warnings
+	Copyright (c) Alibaba, Inc. and its affiliates.import yaml
+	Copyright (c) Alibaba, Inc. and its affiliates.# ------------------------------------------------------------------------# modified from https://github.com/megvii-research/NAFNet/blob/main/basicsr/m
+	Copyright (c) Alibaba, Inc. and its affiliates.# Modified from https://github.com/pytorch/vision/blob/master/torchvision/models/mobilenet.pyfrom torch import nn
+	Copyright (c) Alibaba, Inc. and its affiliates.# Modified from https://github.com/pytorch/vision/blob/master/torchvision/models/resnet.pyimport torchimport torch.nn as nn
+	Copyright (c) Alibaba, Inc. and its affiliates.# Part of the implementation is borrowed from huggingface/transformers.
+	Copyright (c) Alibaba, Inc. and its affiliates.# Part of the implementation is borrowed from huggingface/transformers.from collections.abc import Mapping
+	Copyright (c) Alibaba, Inc. and its affiliates.# Part of the implementation is borrowed from huggingface/transformers.import astimport functoolsimport importlibimport osimport os.path as ospimp
+	Copyright (c) Alibaba, Inc. and its affiliates."""Processor class for GeoLayoutLM.
+	Copyright (c) Alibaba, Inc. and its affiliates."""PyTorch LSTM model. """
+	Copyright (c) Alibaba, Inc. and its affiliates."""PyTorch trainer for UniTE model."""
+	Copyright (c) Alibaba, Inc. and its affiliates."""PyTorch UniTE model."""
+	Copyright (c) Alibaba, Inc. and its affiliates.# Related papers:
+	Copyright (c) Alibaba, Inc. and its affiliates.""" Res2Net implementation is adapted from https://github.com/wenet-e2e/wespeaker.    ERes2Net_aug incorporates both local and global feature fusion te
+	Copyright (c) Alibaba, Inc. and its affiliates.""" Res2Net implementation is adapted from https://github.com/wenet-e2e/wespeaker.    ERes2Net incorporates both local and global feature fusion techni
+	Copyright (c) Alibaba, Inc. and its affiliates.r"""Modified from ``https://github.com/sergeyk/rayleigh''."""import osimport os.path as osp
+	Copyright (c) Alibaba, Inc. and its affiliates.r"""Modified from ``https://github.com/zhuoinoulu/pidinet''.    Image augmentation: T.Compose([        T.ToTensor(),        T.Normalize(mean=[0.485, 
+	Copyright (c) Alibaba, Inc. and its affiliates.'''RRDB debanding networkThis model use rrdbnet to achieve image debanding task.Training data is obtained from:
+	Copyright (c) Alibaba, Inc. and its affiliates.# Some code here is modified based on speechbrain and can be found on github# https://github.com/speechbrain/speechbrain/blob/develop/speechbrain/lobes
+	Copyright (c) Alibaba, Inc. and its affiliates.""" Some implementations are adapted from https://github.com/yuyq96/D-TDNN"""
+	Copyright (c) Alibaba, Inc. and its affiliates.# The DAMO-YOLO implementation is also open-sourced by the authors, and available# at https://github.com/tinyvision/damo-yolo.
+	Copyright (c) Alibaba, Inc. and its affiliates.# The DAMO-YOLO implementation is also open-sourced by the authors at https://github.com/tinyvision/damo-yolo.
+	Copyright (c) Alibaba, Inc. and its affiliates.# The DAMO-YOLO implementation is also open-sourced by the authors at https://github.com/tinyvision/damo-yolo.import math
+	Copyright (c) Alibaba, Inc. and its affiliates.# The ZenNAS implementation is also open-sourced by the authors, and available at https://github.com/idstcv/ZenNAS.
+	Copyright (c) Alibaba, Inc. and its affiliates.""" This ECAPA-TDNN implementation is adapted from https://github.com/speechbrain/speechbrain."""import mathimport osfrom typing import Any, Dict, U
+	Copyright (c) Alibaba, Inc. and its affiliates.""" This ECAPA-TDNN implementation is adapted from https://github.com/speechbrain/speechbrain.    RDINOHead implementation is adapted from DINO framewo
+	Copyright (c) Alibaba, Inc. and its affiliates.# This file is adapted from the AllenNLP library at https://github.com/allenai/allennlp# Part of the implementation is borrowed from wimglenn/johnnydep
+	Copyright (c) Alibaba, Inc. and its affiliates.""" This implementation is adapted from https://github.com/wenet-e2e/wespeaker."""import torchimport torch.nn as nn
 	Copyright (c) Alibaba, Inc. and its affiliates."""UniTE model configuration"""
 	Copyright (c) Alibaba, Inc. and its affiliates.# yapf: disable
 	Copyright (c) Facebook, Inc. and its affiliates.
@@ -1197,7 +1624,7 @@ zeroscratches 1.0.0 pypi:zeroscratches/1.0.0
 Licenses: 
 
 Apache License 2.0
-(google/referring-manipulation 20220421-snapshot-4f328a81, hpcaitech/ColossalAI v0.1.8, hpcaitech/ColossalAI v0.2.1, hpcaitech/ColossalAI v0.3.3, hpcaitech/ColossalAI v0.3.4, hpcaitech/open-sora v1.2.0, modelscope 1.4.0, ms_adapter 0.1.0, NVIDIA/NeMo v1.19.0_mm, open-mmlab/mmdetection v2.2.0, PaddlePaddle/PaddleHub v2.3.0, ppdiffusers 0.16.2, ppdiffusers 0.19.3, transformers 4.20.0, transformers 4.24.0, youansheng/torchcv 20201119-snapshot-5cb5203f, zeroscratches 1.0.0, ztransforms 0.2.0)
+(diffusers 0.15.1, facebookresearch/segment-anything 20230415-snapshot-567662b0, google/referring-manipulation 20220421-snapshot-4f328a81, hpcaitech/ColossalAI v0.1.8, hpcaitech/ColossalAI v0.2.1, hpcaitech/ColossalAI v0.3.3, hpcaitech/ColossalAI v0.3.4, hpcaitech/open-sora v1.2.0, modelscope 1.4.0, modelscope 1.9.2, ms_adapter 0.1.0, open-mmlab/mmdetection v2.2.0, PaddlePaddle/PaddleHub v2.3.0, ppdiffusers 0.16.2, ppdiffusers 0.19.3, transformers 4.20.0, transformers 4.24.0, youansheng/torchcv 20201119-snapshot-5cb5203f, zeroscratches 1.0.0, ztransforms 0.2.0)
 
 Apache License
 Version 2.0, January 2004
@@ -1409,3 +1836,4 @@ AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ---
+
